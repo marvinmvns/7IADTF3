@@ -1,0 +1,124 @@
+/* MedAssist - Estilos Globais */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1a73e8;
+  --primary-dark: #1557b0;
+  --danger: #d32f2f;
+  --warning: #f57c00;
+  --success: #388e3c;
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --text: #202124;
+  --text-secondary: #5f6368;
+  --border: #dadce0;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  /* Cores triagem Manchester */
+  --risco-vermelho: #d32f2f;
+  --risco-laranja: #f57c00;
+  --risco-amarelo: #fbc02d;
+  --risco-verde: #388e3c;
+  --risco-azul: #1a73e8;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.app-layout { display: flex; min-height: 100vh; }
+.app-sidebar {
+  width: 260px; background: var(--surface); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 100;
+  transition: transform 0.3s;
+}
+.app-main { flex: 1; margin-left: 260px; padding: 24px; min-height: 100vh; }
+
+/* Cards */
+.card {
+  background: var(--surface); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 20px; margin-bottom: 16px;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-danger { background: var(--danger); color: white; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { background: var(--bg); }
+.btn-icon { padding: 8px; border-radius: 50%; background: none; border: none; cursor: pointer; }
+.btn-icon:hover { background: var(--bg); }
+
+/* Inputs */
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 4px; color: var(--text-secondary); }
+.form-control {
+  width: 100%; padding: 10px 14px; border: 1px solid var(--border);
+  border-radius: 8px; font-size: 14px; font-family: inherit; transition: border-color 0.2s;
+}
+.form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(26,115,232,0.15); }
+select.form-control { appearance: auto; }
+
+/* Badges de risco */
+.badge {
+  display: inline-block; padding: 4px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 600; text-transform: uppercase; color: white;
+}
+.badge-vermelho { background: var(--risco-vermelho); }
+.badge-laranja { background: var(--risco-laranja); }
+.badge-amarelo { background: var(--risco-amarelo); color: #333; }
+.badge-verde { background: var(--risco-verde); }
+.badge-azul { background: var(--risco-azul); }
+
+/* Chat */
+.chat-container { display: flex; flex-direction: column; height: calc(100vh - 100px); }
+.chat-messages { flex: 1; overflow-y: auto; padding: 16px; }
+.chat-input-area { display: flex; gap: 8px; padding: 16px; border-top: 1px solid var(--border); }
+.chat-input-area input { flex: 1; }
+.msg { max-width: 80%; padding: 12px 16px; border-radius: 16px; margin-bottom: 8px; font-size: 14px; }
+.msg-user { background: var(--primary); color: white; margin-left: auto; border-bottom-right-radius: 4px; }
+.msg-assistant { background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.msg-fonte { font-size: 11px; color: var(--text-secondary); margin-top: 4px; font-style: italic; }
+
+/* Tabelas */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+.table th { font-weight: 600; color: var(--text-secondary); font-size: 12px; text-transform: uppercase; }
+.table tr:hover { background: var(--bg); }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .app-sidebar { transform: translateX(-100%); }
+  .app-sidebar.open { transform: translateX(0); }
+  .app-main { margin-left: 0; padding: 16px; }
+  .msg { max-width: 95%; }
+  .mobile-menu-btn { display: block !important; }
+  .hide-mobile { display: none !important; }
+}
+
+.mobile-menu-btn { display: none; position: fixed; top: 12px; left: 12px; z-index: 200; }
+
+/* Animações */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 0.3s ease; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Gravação de voz */
+.recording { animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.recording-indicator { color: var(--danger); }

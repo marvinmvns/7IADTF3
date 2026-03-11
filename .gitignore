@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+dist/
+node_modules/
+.angular/
+backend/models/finetuned/
+*.onnx
+.DS_Store

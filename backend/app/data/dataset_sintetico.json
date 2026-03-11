@@ -1,0 +1,102 @@
+[
+  {
+    "pergunta": "Quais são os sintomas de infarto agudo do miocárdio?",
+    "contexto": "Protocolo de emergência cardiovascular do hospital",
+    "resposta": "Os principais sintomas incluem dor torácica em aperto, irradiação para braço esquerdo, mandíbula ou costas, sudorese fria, náusea e dispneia. Em mulheres e idosos, os sintomas podem ser atípicos. Fonte: Protocolo AHA/SBC."
+  },
+  {
+    "pergunta": "Qual a conduta para paciente com febre acima de 39°C?",
+    "contexto": "Protocolo de triagem - classificação Manchester",
+    "resposta": "Classificar como LARANJA (muito urgente). Coletar hemograma, PCR e hemocultura. Administrar antitérmico conforme prescrição médica. Monitorar sinais vitais a cada 15 minutos. Requer validação médica."
+  },
+  {
+    "pergunta": "Como realizar a triagem de paciente com dor abdominal?",
+    "contexto": "Protocolo de triagem abdominal",
+    "resposta": "Avaliar localização, intensidade (escala 0-10), duração e fatores de piora/melhora. Verificar sinais de abdome agudo. Solicitar hemograma e ultrassom se indicado. Classificar conforme Manchester."
+  },
+  {
+    "pergunta": "Quais exames solicitar para suspeita de AVC?",
+    "contexto": "Protocolo de AVC - tempo é cérebro",
+    "resposta": "TC de crânio sem contraste IMEDIATA, hemograma, coagulograma, glicemia, ECG. Aplicar escala NIHSS. Tempo porta-agulha < 60 min para trombólise. Classificação: VERMELHO."
+  },
+  {
+    "pergunta": "Qual o protocolo para paciente diabético descompensado?",
+    "contexto": "Protocolo de emergência metabólica",
+    "resposta": "Verificar glicemia capilar, gasometria arterial, eletrólitos. Se cetoacidose: hidratação vigorosa com SF 0.9%, insulina regular EV, reposição de potássio. Monitorar glicemia horária."
+  },
+  {
+    "pergunta": "Como classificar risco de paciente com dispneia?",
+    "contexto": "Protocolo respiratório de triagem",
+    "resposta": "Avaliar SpO2, FR, uso de musculatura acessória. SpO2 < 90%: VERMELHO. SpO2 90-94%: LARANJA. Dispneia leve sem dessaturação: AMARELO. Solicitar gasometria e RX tórax."
+  },
+  {
+    "pergunta": "Quais são os critérios para internação por pneumonia?",
+    "contexto": "Protocolo de pneumonia comunitária",
+    "resposta": "Aplicar escore CURB-65: Confusão mental, Ureia > 50, FR > 30, PA < 90/60, Idade > 65. Score 0-1: ambulatorial. Score 2: considerar internação. Score 3+: internação. Score 4-5: UTI."
+  },
+  {
+    "pergunta": "Como manejar crise hipertensiva na emergência?",
+    "contexto": "Protocolo de emergência hipertensiva",
+    "resposta": "Diferenciar urgência (sem LOA) de emergência (com LOA). Emergência: reduzir 25% da PA na 1ª hora com nitroprussiato ou nitroglicerina EV. Urgência: captopril VO, monitorar 2-6h."
+  },
+  {
+    "pergunta": "Qual a conduta para reação alérgica grave (anafilaxia)?",
+    "contexto": "Protocolo de anafilaxia",
+    "resposta": "Adrenalina IM 0.3-0.5mg (adulto) na face lateral da coxa IMEDIATAMENTE. Manter via aérea, O2 suplementar, acesso venoso. Anti-histamínico e corticoide como adjuvantes. Observar 6-8h."
+  },
+  {
+    "pergunta": "Como realizar triagem de gestante com dor abdominal?",
+    "contexto": "Protocolo obstétrico de emergência",
+    "resposta": "Avaliar idade gestacional, características da dor, sangramento vaginal, movimentação fetal. Monitorar BCF. Descartar trabalho de parto prematuro, descolamento de placenta e pré-eclâmpsia."
+  },
+  {
+    "pergunta": "Quais medicamentos são contraindicados na gestação?",
+    "contexto": "Protocolo de segurança medicamentosa",
+    "resposta": "Categoria X (contraindicados): metotrexato, warfarina, isotretinoína, misoprostol, estatinas. Sempre consultar classificação FDA/ANVISA antes de prescrever. Requer validação do obstetra."
+  },
+  {
+    "pergunta": "Como tratar desidratação em paciente pediátrico?",
+    "contexto": "Protocolo pediátrico de hidratação",
+    "resposta": "Classificar grau: leve (3-5%), moderada (6-9%), grave (>10%). Leve/moderada: TRO com SRO. Grave: SF 0.9% 20ml/kg em bolus, reavaliar. Monitorar diurese, peso e sinais vitais."
+  },
+  {
+    "pergunta": "Qual o protocolo de sepse do hospital?",
+    "contexto": "Protocolo de sepse - pacote 1 hora",
+    "resposta": "Pacote 1h: lactato sérico, hemoculturas antes de ATB, ATB de amplo espectro, cristaloide 30ml/kg se hipotensão ou lactato > 4. Vasopressor se PAM < 65 após volume. Reavaliar em 3h."
+  },
+  {
+    "pergunta": "Como avaliar risco de TEP (tromboembolismo pulmonar)?",
+    "contexto": "Protocolo de TEP",
+    "resposta": "Aplicar escore de Wells: TVP prévia, FC>100, imobilização, hemoptise, câncer, sinais de TVP. Baixa probabilidade: D-dímero. Alta probabilidade: angioTC de tórax. Anticoagulação imediata se alta suspeita."
+  },
+  {
+    "pergunta": "Quais são os protocolos de isolamento para doenças infectocontagiosas?",
+    "contexto": "Protocolo de controle de infecção hospitalar",
+    "resposta": "Contato: MRSA, VRE (avental + luvas). Gotículas: influenza, meningococo (máscara cirúrgica). Aerossóis: TB, sarampo, COVID (N95 + quarto pressão negativa). Sempre higienizar mãos."
+  },
+  {
+    "pergunta": "Como realizar a classificação de risco Manchester?",
+    "contexto": "Manual de triagem Manchester",
+    "resposta": "5 categorias: Vermelho (emergência, 0min), Laranja (muito urgente, 10min), Amarelo (urgente, 60min), Verde (pouco urgente, 120min), Azul (não urgente, 240min). Usar fluxogramas por queixa principal."
+  },
+  {
+    "pergunta": "Qual a conduta para paciente com dor torácica na triagem?",
+    "contexto": "Protocolo de dor torácica",
+    "resposta": "Classificar como mínimo AMARELO. ECG em até 10 minutos. Se alteração: VERMELHO. Coletar troponina, CKMB. Manter monitorização. AAS 200mg se suspeita de SCA (após validação médica)."
+  },
+  {
+    "pergunta": "Como orientar paciente sobre uso correto de antibióticos?",
+    "contexto": "Programa de stewardship antimicrobiano",
+    "resposta": "Completar todo o ciclo prescrito. Não usar sobras de tratamentos anteriores. Tomar nos horários corretos. Não compartilhar medicamentos. Relatar efeitos adversos. Fonte: OMS/ANVISA."
+  },
+  {
+    "pergunta": "Quais vacinas são recomendadas para profissionais de saúde?",
+    "contexto": "Protocolo de imunização ocupacional",
+    "resposta": "Hepatite B (3 doses + anti-HBs), tríplice viral, dTpa, influenza anual, COVID-19, varicela (se suscetível). Manter cartão vacinal atualizado. Fonte: PNI/MS."
+  },
+  {
+    "pergunta": "Como proceder em caso de exposição a material biológico?",
+    "contexto": "Protocolo de acidente com material biológico",
+    "resposta": "Lavar com água e sabão (não espremer). Notificar CCIH. Coletar sorologias do profissional e paciente-fonte (HIV, HBV, HCV). Iniciar PEP para HIV em até 2h se indicado. Notificar SINAN."
+  }
+]
