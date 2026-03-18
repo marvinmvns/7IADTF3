@@ -6,5 +6,9 @@ dist/
 node_modules/
 .angular/
 backend/models/finetuned/
+models/*.gguf
 *.onnx
 .DS_Store
+.claude/
+*.md
+!README.md

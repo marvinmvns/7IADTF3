@@ -89,7 +89,13 @@ select.form-control { appearance: auto; }
 .msg { max-width: 80%; padding: 12px 16px; border-radius: 16px; margin-bottom: 8px; font-size: 14px; }
 .msg-user { background: var(--primary); color: white; margin-left: auto; border-bottom-right-radius: 4px; }
 .msg-assistant { background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
-.msg-fonte { font-size: 11px; color: var(--text-secondary); margin-top: 4px; font-style: italic; }
+.msg-fonte { font-size: 11px; color: var(--text-secondary); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+.fonte-tag {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 8px; border-radius: 10px;
+  background: var(--bg); font-style: normal; font-size: 11px;
+}
+.fonte-rag { background: #e8f5e9; color: var(--success); }
 
 /* Tabelas */
 .table { width: 100%; border-collapse: collapse; font-size: 14px; }

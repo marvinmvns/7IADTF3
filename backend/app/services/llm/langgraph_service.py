@@ -20,34 +20,91 @@ def coletar_sintomas(state: EstadoTriagem) -> EstadoTriagem:
     return state
 
 
+def _parse_pressao(pa_str: str | None) -> tuple[int, int]:
+    """Extrai sistólica e diastólica de uma string como '180/110'. Retorna (0, 0) se inválida."""
+    if not pa_str:
+        return 0, 0
+    try:
+        partes = pa_str.strip().split("/")
+        return int(partes[0]), int(partes[1])
+    except (ValueError, IndexError):
+        return 0, 0
+
+
 def classificar_risco(state: EstadoTriagem) -> EstadoTriagem:
-    """Nó: classifica risco Manchester."""
+    """Nó: classifica risco Manchester baseado em sintomas + sinais vitais."""
     sinais = state.get("sinais_vitais", {})
     sintomas = state["sintomas"].lower()
+    saturacao = sinais.get("saturacao") or 100
+    temperatura = sinais.get("temperatura") or 36.5
+    fc = sinais.get("frequencia_cardiaca") or 80
+    sistolica, diastolica = _parse_pressao(sinais.get("pressao_arterial"))
 
-    # Regras simplificadas de classificação
-    if sinais.get("saturacao", 100) < 90 or "parada" in sintomas:
+    # VERMELHO: emergência
+    emergencia_sintomas = ["parada", "inconsciente", "sem respiração", "pcr", "hemorragia maciça"]
+    if saturacao < 90 or any(s in sintomas for s in emergencia_sintomas):
         state["classificacao"] = "vermelho"
-    elif sinais.get("temperatura", 36.5) >= 39.5 or "dor torácica" in sintomas:
+    # LARANJA: muito urgente
+    elif (
+        saturacao < 95
+        or temperatura >= 39.5
+        or fc > 130 or fc < 40
+        or sistolica > 180 or sistolica < 80
+        or diastolica > 120
+        or any(s in sintomas for s in [
+            "dor torácica", "dor toracica", "dor no peito",
+            "convulsão", "convulsao", "avc", "infarto",
+            "dificuldade respiratória", "dificuldade respiratoria",
+            "delírio", "delirio", "delirante", "confusão mental", "confusao mental",
+            "desmaio", "síncope", "sincope", "cianose",
+        ])
+    ):
         state["classificacao"] = "laranja"
-    elif sinais.get("temperatura", 36.5) >= 38.5 or "dor intensa" in sintomas:
+    # AMARELO: urgente
+    elif (
+        temperatura >= 38.5
+        or fc > 120
+        or sistolica > 160
+        or any(s in sintomas for s in [
+            "dor intensa", "febre alta", "vômito", "vomito",
+            "fratura", "desidratação", "desidratacao", "sangramento",
+        ])
+    ):
         state["classificacao"] = "amarelo"
-    elif "dor leve" in sintomas or "resfriado" in sintomas:
+    # VERDE: pouco urgente
+    elif any(s in sintomas for s in ["dor leve", "resfriado", "tosse", "dor de cabeça", "mal estar"]):
         state["classificacao"] = "verde"
+    # AZUL: não urgente
+    elif any(s in sintomas for s in ["receita", "atestado", "rotina", "check-up"]):
+        state["classificacao"] = "azul"
     else:
         state["classificacao"] = "verde"
     return state
 
 
 def verificar_exames(state: EstadoTriagem) -> EstadoTriagem:
-    """Nó: verifica exames pendentes baseado nos sintomas."""
+    """Nó: verifica exames pendentes baseado nos sintomas e sinais vitais."""
     sintomas = state["sintomas"].lower()
-    if "dor torácica" in sintomas:
-        state["exames_pendentes"].extend(["ECG", "Troponina", "Raio-X Tórax"])
-    if "febre" in sintomas:
-        state["exames_pendentes"].extend(["Hemograma", "PCR"])
+    sinais = state.get("sinais_vitais", {})
+    sistolica, _ = _parse_pressao(sinais.get("pressao_arterial"))
+    exames = state["exames_pendentes"]
+
+    if any(s in sintomas for s in ["dor torácica", "dor toracica", "dor no peito"]):
+        exames.extend(["ECG", "Troponina", "Raio-X Tórax"])
+    if any(s in sintomas for s in ["febre", "infecção", "infeccao"]):
+        exames.extend(["Hemograma", "PCR", "Hemocultura"])
     if "dor abdominal" in sintomas:
-        state["exames_pendentes"].extend(["Ultrassom Abdominal", "Hemograma"])
+        exames.extend(["Ultrassom Abdominal", "Hemograma"])
+    if any(s in sintomas for s in ["confusão", "confusao", "delírio", "delirio", "delirante", "convulsão", "convulsao"]):
+        exames.extend(["Tomografia de Crânio", "Glicemia", "Eletrólitos", "Gasometria"])
+    if any(s in sintomas for s in ["dispneia", "falta de ar", "dificuldade respirat"]):
+        exames.extend(["Gasometria", "Raio-X Tórax", "D-Dímero"])
+    if sistolica > 180:
+        exames.extend(["ECG", "Função Renal", "Fundo de Olho"])
+
+    # Remove duplicatas mantendo ordem
+    seen = set()
+    state["exames_pendentes"] = [e for e in exames if not (e in seen or seen.add(e))]
     return state
 
 
@@ -90,7 +147,7 @@ def criar_grafo_triagem() -> StateGraph:
     grafo.add_node("classificar", classificar_risco)
     grafo.add_node("exames", verificar_exames)
     grafo.add_node("alerta", gerar_alerta)
-    grafo.add_node("orientacao", definir_orientacao)
+    grafo.add_node("orientar", definir_orientacao)
 
     grafo.set_entry_point("coletar")
     grafo.add_edge("coletar", "classificar")
@@ -98,9 +155,9 @@ def criar_grafo_triagem() -> StateGraph:
         "urgente": "alerta",
         "normal": "exames",
     })
-    grafo.add_edge("exames", "orientacao")
+    grafo.add_edge("exames", "orientar")
     grafo.add_edge("alerta", "exames")
-    grafo.add_edge("orientacao", END)
+    grafo.add_edge("orientar", END)
 
     return grafo.compile()
 

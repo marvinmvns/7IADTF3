@@ -47,6 +47,49 @@ class PacienteService:
         result = await db.execute(stmt)
         return result.scalars().all()
 
+    @staticmethod
+    async def atualizar(db: AsyncSession, paciente_id: int, dados: dict) -> Paciente | None:
+        stmt = select(Paciente).where(Paciente.id == paciente_id)
+        result = await db.execute(stmt)
+        paciente = result.scalar_one_or_none()
+        if not paciente:
+            return None
+        for key, value in dados.items():
+            if value is not None and hasattr(paciente, key):
+                setattr(paciente, key, value)
+        await db.commit()
+        await db.refresh(paciente)
+        return paciente
+
+    @staticmethod
+    async def remover(db: AsyncSession, paciente_id: int) -> bool:
+        from sqlalchemy import delete as sql_delete
+        from app.models.models import Mensagem
+
+        stmt = select(Paciente).where(Paciente.id == paciente_id)
+        result = await db.execute(stmt)
+        paciente = result.scalar_one_or_none()
+        if not paciente:
+            return False
+
+        # Remove dados relacionados (cascade manual)
+        # 1. Mensagens das conversas do paciente
+        conversas = await db.execute(
+            select(Conversa).where(Conversa.paciente_id == paciente_id)
+        )
+        for conv in conversas.scalars().all():
+            await db.execute(sql_delete(Mensagem).where(Mensagem.conversa_id == conv.id))
+
+        # 2. Conversas, triagens, prontuários
+        await db.execute(sql_delete(Conversa).where(Conversa.paciente_id == paciente_id))
+        await db.execute(sql_delete(Triagem).where(Triagem.paciente_id == paciente_id))
+        await db.execute(sql_delete(Prontuario).where(Prontuario.paciente_id == paciente_id))
+
+        # 3. Paciente
+        await db.delete(paciente)
+        await db.commit()
+        return True
+
 
 class ProntuarioService:
 

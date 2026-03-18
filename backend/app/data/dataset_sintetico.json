@@ -98,5 +98,155 @@
     "pergunta": "Como proceder em caso de exposição a material biológico?",
     "contexto": "Protocolo de acidente com material biológico",
     "resposta": "Lavar com água e sabão (não espremer). Notificar CCIH. Coletar sorologias do profissional e paciente-fonte (HIV, HBV, HCV). Iniciar PEP para HIV em até 2h se indicado. Notificar SINAN."
+  },
+  {
+    "pergunta": "Qual o modelo de laudo para radiografia de tórax?",
+    "contexto": "Modelo de laudo - Radiologia",
+    "resposta": "LAUDO RADIOGRÁFICO - TÓRAX PA E PERFIL. Campos pulmonares: transparência preservada bilateralmente, sem consolidações ou infiltrados. Seios costofrênicos livres. Área cardíaca dentro dos limites da normalidade (ICT < 0.50). Mediastino centrado. Arcabouço ósseo íntegro. Partes moles sem alterações. Impressão: Radiografia de tórax sem alterações significativas. Requer assinatura do médico radiologista."
+  },
+  {
+    "pergunta": "Como elaborar laudo de hemograma completo?",
+    "contexto": "Modelo de laudo - Laboratório de Análises Clínicas",
+    "resposta": "LAUDO LABORATORIAL - HEMOGRAMA COMPLETO. Eritrograma: Hemácias, Hemoglobina, Hematócrito, VCM, HCM, CHCM, RDW (valores de referência por sexo e idade). Leucograma: Leucócitos totais, Neutrófilos (bastonetes e segmentados), Eosinófilos, Basófilos, Linfócitos, Monócitos (valores absolutos e relativos). Plaquetograma: Contagem de plaquetas, VPM. Observações morfológicas quando aplicável. Requer assinatura do patologista clínico responsável. Fonte: Modelo padronizado do laboratório."
+  },
+  {
+    "pergunta": "Qual o modelo padrão de laudo de eletrocardiograma?",
+    "contexto": "Modelo de laudo - Cardiologia / ECG",
+    "resposta": "LAUDO DE ELETROCARDIOGRAMA (ECG 12 derivações). Ritmo: sinusal. Frequência cardíaca: ___ bpm. Eixo elétrico: normal (entre 0° e +90°). Onda P: morfologia e duração normais. Intervalo PR: ___ ms (normal 120-200ms). Complexo QRS: duração ___ ms (normal < 120ms), sem sinais de sobrecarga ventricular. Segmento ST: nivelado na linha de base. Onda T: positiva nas derivações esperadas. Intervalo QT/QTc: ___ ms. Conclusão: ECG dentro dos limites da normalidade. Requer assinatura do cardiologista."
+  },
+  {
+    "pergunta": "Como redigir laudo de endoscopia digestiva alta?",
+    "contexto": "Modelo de laudo - Endoscopia",
+    "resposta": "LAUDO DE ENDOSCOPIA DIGESTIVA ALTA. Esôfago: mucosa de coloração rósea, calibre e distensibilidade preservados, junção esofagogástrica (JEG) ao nível do pinçamento diafragmático. Estômago: lago mucoso claro, mucosa do corpo e antro sem lesões, pregas gástricas regulares, piloro centrado e pérvio. Duodeno: bulbo e segunda porção sem alterações mucosas. Biópsia: realizada / não realizada. Teste da urease: positivo / negativo. Conclusão: Exame endoscópico normal / descrever achados. Requer assinatura do médico endoscopista."
+  },
+  {
+    "pergunta": "Qual o modelo de laudo para ultrassonografia abdominal total?",
+    "contexto": "Modelo de laudo - Radiologia / Ultrassonografia",
+    "resposta": "LAUDO DE ULTRASSONOGRAFIA ABDOMINAL TOTAL. Fígado: dimensões normais, contornos regulares, ecotextura homogênea, veias hepáticas e porta de calibre normal. Vesícula biliar: normodistendida, paredes finas, conteúdo anecóico, sem cálculos. Vias biliares: não dilatadas. Pâncreas: dimensões e ecotextura normais (quando visualizado). Baço: dimensões normais, ecotextura homogênea. Rins: tópicos, dimensões normais, relação córtico-medular preservada, sem sinais de dilatação pielocalicial ou litíase. Aorta: calibre normal. Bexiga: adequadamente distendida, paredes finas, conteúdo anecóico. Conclusão: Ultrassonografia abdominal sem alterações significativas. Requer assinatura do médico ultrassonografista."
+  },
+  {
+    "pergunta": "Qual o modelo de receita para prescrição de antibiótico (amoxicilina)?",
+    "contexto": "Modelo de receita - Prescrição de antibiótico",
+    "resposta": "RECEITUÁRIO MÉDICO. Paciente: ___. Idade: ___. Data: ___. Rp: 1) Amoxicilina 500mg - Tomar 01 cápsula por via oral de 8 em 8 horas durante 7 dias. Quantidade: 21 cápsulas. Uso: Oral. Orientações: Tomar com ou sem alimentos. Completar todo o tratamento mesmo com melhora dos sintomas. Em caso de reação alérgica (erupção cutânea, edema, dificuldade respiratória), suspender e procurar pronto-socorro. Retorno em 7 dias ou antes se necessário. CRM/UF: ___. Assinatura e carimbo do prescritor. Fonte: Modelo padronizado da farmácia hospitalar."
+  },
+  {
+    "pergunta": "Como prescrever medicação anti-hipertensiva (losartana)?",
+    "contexto": "Modelo de receita - Prescrição de anti-hipertensivo",
+    "resposta": "RECEITUÁRIO MÉDICO. Paciente: ___. Idade: ___. Data: ___. Rp: 1) Losartana potássica 50mg - Tomar 01 comprimido por via oral 1 vez ao dia, pela manhã. Quantidade: 30 comprimidos. Uso contínuo. Orientações: Medir pressão arterial regularmente e anotar valores. Manter dieta hipossódica. Não interromper sem orientação médica. Evitar uso concomitante de anti-inflamatórios sem prescrição. Monitorar função renal e potássio sérico. Retorno em 30 dias com exames laboratoriais. CRM/UF: ___. Assinatura e carimbo do prescritor."
+  },
+  {
+    "pergunta": "Qual o modelo de receita para paciente diabético (metformina)?",
+    "contexto": "Modelo de receita - Prescrição para diabetes",
+    "resposta": "RECEITUÁRIO MÉDICO. Paciente: ___. Idade: ___. Data: ___. Rp: 1) Cloridrato de Metformina 850mg - Tomar 01 comprimido por via oral 2 vezes ao dia (café da manhã e jantar), junto às refeições. Quantidade: 60 comprimidos. Uso contínuo. 2) Glicosímetro - realizar glicemia capilar em jejum diariamente e anotar valores. Orientações: Manter dieta conforme orientação nutricional. Praticar atividade física regular. Sinais de alerta: hipoglicemia (tremores, sudorese, confusão). Retorno em 30 dias com hemoglobina glicada e glicemia de jejum. CRM/UF: ___."
+  },
+  {
+    "pergunta": "Como prescrever analgésico para dor moderada a intensa?",
+    "contexto": "Modelo de receita - Prescrição de analgésicos",
+    "resposta": "RECEITUÁRIO MÉDICO. Paciente: ___. Idade: ___. Data: ___. Rp: 1) Dipirona sódica 500mg - Tomar 01 a 02 comprimidos por via oral de 6 em 6 horas se dor. Dose máxima: 4g/dia. Quantidade: 20 comprimidos. 2) Paracetamol 750mg - Tomar 01 comprimido por via oral de 6 em 6 horas alternando com dipirona, se dor persistente. Quantidade: 20 comprimidos. Orientações: Não ultrapassar doses máximas. Em caso de dor não controlada, retornar ao pronto-socorro. Contraindicado uso de AAS em caso de dengue. Evitar automedicação com opioides. CRM/UF: ___. Assinatura e carimbo do prescritor."
+  },
+  {
+    "pergunta": "Qual o modelo de receita para corticosteroide inalatório (asma)?",
+    "contexto": "Modelo de receita - Prescrição para asma",
+    "resposta": "RECEITUÁRIO MÉDICO. Paciente: ___. Idade: ___. Data: ___. Rp: 1) Budesonida spray nasal 64mcg - Aplicar 02 jatos em cada narina 2 vezes ao dia. Quantidade: 01 frasco. 2) Salbutamol spray 100mcg - Inalar 02 jatos via espaçador em caso de crise (dispneia, sibilância). Pode repetir a cada 20 minutos até 3 vezes. Se não melhorar, procurar emergência. Quantidade: 01 frasco. Uso contínuo para budesonida; uso sob demanda para salbutamol. Orientações: Lavar espaçador semanalmente. Enxaguar boca após uso de corticoide inalatório. Retorno em 30 dias para reavaliação. CRM/UF: ___."
+  },
+  {
+    "pergunta": "Qual o procedimento padrão para coleta de sangue venoso?",
+    "contexto": "Procedimento interno - Coleta de sangue",
+    "resposta": "PROCEDIMENTO: COLETA DE SANGUE VENOSO. 1) Confirmar identidade do paciente (nome completo e data de nascimento). 2) Verificar pedido médico e tubos necessários (ordem de coleta: hemocultura, tubo seco, citrato, EDTA, fluoreto). 3) Higienizar mãos e calçar luvas de procedimento. 4) Aplicar torniquete acima do local de punção (máximo 1 minuto). 5) Realizar antissepsia com álcool 70% em movimento circular. 6) Puncionar veia com agulha em ângulo de 15-30°. 7) Coletar volume adequado em cada tubo, homogeneizar por inversão. 8) Remover torniquete, retirar agulha e aplicar pressão no local. 9) Descartar perfurocortantes em coletor adequado. 10) Identificar tubos e encaminhar ao laboratório. Fonte: POP do Laboratório."
+  },
+  {
+    "pergunta": "Como realizar curativo em ferida cirúrgica?",
+    "contexto": "Procedimento interno - Curativos",
+    "resposta": "PROCEDIMENTO: CURATIVO DE FERIDA CIRÚRGICA. 1) Reunir material: pacote de curativo estéril, SF 0.9%, luvas estéreis, cobertura adequada. 2) Higienizar mãos e calçar luvas de procedimento para retirar curativo anterior. 3) Avaliar a ferida: aspecto, presença de secreção, sinais flogísticos, tipo de tecido. 4) Trocar luvas por estéreis. 5) Limpar a ferida com SF 0.9% em jato, do centro para as bordas (do limpo para o contaminado). 6) Secar ao redor com gaze estéril. 7) Aplicar cobertura conforme avaliação (gaze não aderente, alginato, hidrogel, etc.). 8) Fixar com fita microporosa. 9) Registrar em prontuário: aspecto, medidas, cobertura utilizada. Fonte: Protocolo de Enfermagem."
+  },
+  {
+    "pergunta": "Qual o procedimento para sondagem vesical de demora?",
+    "contexto": "Procedimento interno - Sondagem vesical",
+    "resposta": "PROCEDIMENTO: SONDAGEM VESICAL DE DEMORA (SVD). Indicações: retenção urinária, monitorização de débito urinário, pós-operatório. Material: cateter Foley (14-18Fr adulto), bolsa coletora, kit de cateterismo, xilocaína gel, SF 0.9%, seringa 20ml, água destilada. Técnica (feminina): 1) Posicionar em decúbito dorsal, MMII fletidos e abduzidos. 2) Antissepsia vulvar com clorexidina. 3) Inserir cateter lubrificado no meato uretral até retorno de urina. 4) Insuflar balão com 10ml de AD. 5) Conectar bolsa coletora. Técnica masculina: elevar pênis a 90°, inserir gel anestésico, introduzir cateter 20-22cm. Registrar volume e aspecto da urina drenada. Requer prescrição médica."
+  },
+  {
+    "pergunta": "Como realizar a administração de medicamento por via endovenosa?",
+    "contexto": "Procedimento interno - Administração de medicamentos EV",
+    "resposta": "PROCEDIMENTO: ADMINISTRAÇÃO DE MEDICAMENTO VIA ENDOVENOSA. 1) Conferir prescrição médica: medicamento, dose, via, horário, diluição (regra dos 9 certos). 2) Verificar alergias do paciente. 3) Preparar medicamento em ambiente limpo, conferir validade e integridade do frasco. 4) Diluir conforme protocolo da farmácia (compatibilidade de diluentes). 5) Identificar seringa/equipo com nome, medicamento, dose, horário. 6) Higienizar mãos e calçar luvas. 7) Conferir acesso venoso: permeabilidade, sinais de flebite ou infiltração. 8) Administrar na velocidade prescrita (bolus, intermitente ou contínuo). 9) Observar reações adversas nos primeiros minutos. 10) Registrar checagem na prescrição. Fonte: POP da Enfermagem."
+  },
+  {
+    "pergunta": "Qual o procedimento para verificação de sinais vitais?",
+    "contexto": "Procedimento interno - Sinais vitais",
+    "resposta": "PROCEDIMENTO: VERIFICAÇÃO DE SINAIS VITAIS (SSVV). 1) Temperatura axilar: posicionar termômetro na axila seca por 3-5 minutos. Normal: 36.0-37.0°C. 2) Frequência cardíaca: palpar pulso radial por 1 minuto completo. Normal adulto: 60-100 bpm. 3) Frequência respiratória: contar incursões respiratórias por 1 minuto sem alertar o paciente. Normal adulto: 12-20 irpm. 4) Pressão arterial: manguito adequado ao braço, posição sentada, repouso 5min. Normal: < 120/80 mmHg. 5) SpO2: oxímetro de pulso no dedo indicador. Normal: 95-100%. 6) Dor: escala visual analógica (EVA) 0-10. Registrar todos os valores no prontuário com horário. Fonte: POP de Enfermagem."
+  },
+  {
+    "pergunta": "Como realizar aspiração de vias aéreas (traqueostomia)?",
+    "contexto": "Procedimento interno - Aspiração traqueal",
+    "resposta": "PROCEDIMENTO: ASPIRAÇÃO DE VIAS AÉREAS POR TRAQUEOSTOMIA. 1) Avaliar necessidade: roncos, desconforto, queda de SpO2. 2) Material: sonda de aspiração estéril (calibre = metade do diâmetro da cânula), luvas estéreis, SF 0.9%, aspirador com pressão regulada (adulto: 100-120 mmHg). 3) Pré-oxigenar com FiO2 100% por 30 segundos. 4) Inserir sonda SEM aspirar até encontrar resistência, retirar 1cm. 5) Aspirar ao retirar a sonda em movimento rotatório. Tempo máximo: 10-15 segundos. 6) Reoxigenar entre aspirações. 7) Repetir se necessário (máximo 3 vezes). 8) Auscultar pulmões após procedimento. 9) Registrar aspecto e volume da secreção. Fonte: POP de Fisioterapia Respiratória."
+  },
+  {
+    "pergunta": "Qual o procedimento para preparo e administração de hemotransfusão?",
+    "contexto": "Procedimento interno - Hemotransfusão",
+    "resposta": "PROCEDIMENTO: HEMOTRANSFUSÃO. 1) Conferir prescrição médica e termo de consentimento. 2) Solicitar hemocomponente ao banco de sangue com requisição preenchida. 3) Conferir à beira-leito: identificação do paciente, tipagem ABO/Rh, número da bolsa, validade, aspecto. 4) Aferir SSVV basais (T, FC, PA, FR). 5) Instalar equipo com filtro próprio. 6) Iniciar infusão lenta nos primeiros 15 minutos (gotejamento reduzido). 7) Permanecer à beira-leito nos primeiros 15 min (maior risco de reação). 8) SSVV a cada 15min na 1ª hora, depois a cada 30min. 9) Tempo máximo de infusão: 4 horas. 10) Sinais de reação transfusional: febre, calafrios, urticária, dispneia - PARAR infusão e chamar médico. Fonte: Protocolo do Comitê Transfusional."
+  },
+  {
+    "pergunta": "Como realizar o protocolo de parada cardiorrespiratória (PCR) intra-hospitalar?",
+    "contexto": "Procedimento interno - PCR / ACLS",
+    "resposta": "PROCEDIMENTO: ATENDIMENTO À PCR INTRA-HOSPITALAR (ACLS). 1) Confirmar inconsciência e ausência de pulso (máximo 10 segundos). 2) Acionar time de resposta rápida / código azul. 3) Iniciar compressões torácicas: 100-120/min, profundidade 5-6cm, retorno total do tórax. 4) Ventilar com BVM e O2: relação 30:2 (sem via aérea avançada). 5) Monitorizar ritmo: FV/TV sem pulso → desfibrilação (200J bifásico). AESP/Assistolia → continuar RCP. 6) Adrenalina 1mg EV a cada 3-5 minutos. Amiodarona 300mg na FV/TV refratária. 7) Troca de compressor a cada 2 minutos. 8) Buscar causas reversíveis (5H e 5T). 9) Registrar tempos e intervenções. Fonte: AHA/ACLS 2020."
+  },
+  {
+    "pergunta": "Qual o procedimento para passagem de sonda nasogástrica?",
+    "contexto": "Procedimento interno - Sondagem nasogástrica",
+    "resposta": "PROCEDIMENTO: SONDAGEM NASOGÁSTRICA (SNG). Indicações: descompressão gástrica, lavagem gástrica, administração de dieta/medicamentos. Material: sonda Levine (calibre 14-18Fr adulto), seringa 20ml, estetoscópio, fita adesiva, luvas. Técnica: 1) Posicionar paciente em Fowler (45°). 2) Medir a sonda: ponta do nariz ao lóbulo da orelha até o apêndice xifoide (NEX). 3) Lubrificar ponta da sonda com xilocaína gel. 4) Introduzir pela narina, pedindo ao paciente para deglutir. 5) Progredir até a marca medida. 6) Confirmar posicionamento: injetar 20ml de ar e auscultar em epigástrio; aspirar conteúdo gástrico; RX para confirmação definitiva. 7) Fixar no nariz com fita. 8) Registrar em prontuário. Requer prescrição médica."
+  },
+  {
+    "pergunta": "Como realizar o preparo da pele para procedimento cirúrgico?",
+    "contexto": "Procedimento interno - Centro cirúrgico",
+    "resposta": "PROCEDIMENTO: PREPARO DA PELE PRÉ-CIRÚRGICO. 1) Verificar checklist de cirurgia segura (protocolo OMS - time out). 2) Confirmar sítio cirúrgico e lateralidade (marcação prévia). 3) Tricotomia: realizar apenas se necessário, com tricotomizador elétrico, no máximo 2 horas antes. NÃO usar lâmina de barbear (risco de microlesões). 4) Degermação: aplicar clorexidina degermante 2% com gaze estéril, movimentos circulares do centro para periferia. Tempo de contato: 3-5 minutos. 5) Remover excesso com compressas estéreis. 6) Aplicar clorexidina alcoólica 0.5% aguardar secagem completa. 7) Colocar campos estéreis. Documentar procedimento. Fonte: ANVISA / Protocolo do Centro Cirúrgico."
+  },
+  {
+    "pergunta": "Existe interação medicamentosa entre warfarina e anti-inflamatórios?",
+    "contexto": "Pergunta frequente de médicos - Interações medicamentosas",
+    "resposta": "Sim, a associação de warfarina com AINEs (ibuprofeno, diclofenaco, naproxeno) aumenta significativamente o risco de sangramento gastrointestinal e eleva o INR por deslocamento da ligação proteica. AAS em baixas doses (< 100mg) pode ser usado com cautela quando há indicação cardiológica formal, mas exige monitoramento rigoroso do INR. Alternativas analgésicas: paracetamol (dose máxima 2g/dia com warfarina). Sempre revisar INR 3-5 dias após introdução ou retirada de qualquer medicamento concomitante. Fonte: UpToDate / Interações CYP2C9."
+  },
+  {
+    "pergunta": "Qual a dose pediátrica de amoxicilina para otite média aguda?",
+    "contexto": "Pergunta frequente de médicos - Dosagens pediátricas",
+    "resposta": "A dose padrão de amoxicilina para otite média aguda (OMA) em pediatria é 50mg/kg/dia dividida em 2-3 tomadas, por 7-10 dias. Em caso de OMA grave, recorrente ou falha terapêutica, usar dose alta: 80-90mg/kg/dia (máximo 3g/dia). Para pacientes alérgicos à penicilina (não anafilaxia): cefalosporinas de 2ª geração (cefuroxima 30mg/kg/dia). Alergia grave: azitromicina 10mg/kg no D1, 5mg/kg D2-D5. Reavaliar em 48-72h. Não usar antibiótico em OMA não complicada em > 2 anos com sintomas leves (conduta expectante 48h). Fonte: SBP / AAP Guidelines."
+  },
+  {
+    "pergunta": "Quando devo solicitar parecer da infectologia para antibioticoterapia?",
+    "contexto": "Pergunta frequente de médicos - Stewardship antimicrobiano",
+    "resposta": "Solicitar parecer da infectologia nas seguintes situações: 1) Uso de antimicrobianos de amplo espectro por mais de 72 horas (carbapenêmicos, polimixinas, tigeciclina). 2) Hemoculturas positivas para germes multirresistentes (MRSA, VRE, KPC, Acinetobacter). 3) Pacientes com sepse sem foco definido após 48h. 4) Troca de esquema por falha terapêutica. 5) Infecções fúngicas invasivas. 6) Osteomielite, endocardite, meningite bacteriana. 7) Pacientes imunossuprimidos com infecção. O pedido deve conter: hipótese diagnóstica, culturas coletadas, antimicrobianos em uso e função renal. Fonte: Protocolo do SCIH/CCIH."
+  },
+  {
+    "pergunta": "Quais exames laboratoriais devo solicitar antes de iniciar metotrexato?",
+    "contexto": "Pergunta frequente de médicos - Monitoramento de medicamentos",
+    "resposta": "Antes de iniciar metotrexato, solicitar: 1) Hemograma completo (risco de mielossupressão). 2) Função hepática: TGO, TGP, fosfatase alcalina, albumina (hepatotoxicidade). 3) Função renal: creatinina, ureia, clearance estimado (excreção renal). 4) Sorologias: hepatite B e C, HIV. 5) Radiografia de tórax (pneumonite). 6) Beta-HCG em mulheres em idade fértil (teratogênico - Categoria X). Monitoramento contínuo: hemograma e função hepática a cada 4-8 semanas nos primeiros 6 meses, depois a cada 8-12 semanas. Suplementar ácido fólico 5mg semanal (24-48h após metotrexato) para reduzir efeitos adversos. Fonte: ACR / SBR."
+  },
+  {
+    "pergunta": "Como ajustar dose de antibiótico em paciente com insuficiência renal?",
+    "contexto": "Pergunta frequente de médicos - Ajuste renal de drogas",
+    "resposta": "O ajuste de dose baseia-se no clearance de creatinina estimado (fórmula CKD-EPI ou Cockcroft-Gault). Exemplos comuns: Amoxicilina: ClCr 10-30 ml/min → 250-500mg 12/12h; ClCr < 10 → 250-500mg 24/24h. Ciprofloxacino: ClCr < 30 → reduzir 50% da dose. Vancomicina: guiar por nível sérico (vale 15-20 mcg/ml para infecções graves). Gentamicina: ajustar intervalo (ClCr 40-60 → 12/12h; ClCr 20-40 → 24/24h; ClCr < 20 → por nível sérico). Em hemodiálise: administrar doses complementares pós-diálise para drogas dialisáveis. Sempre consultar tabela de ajuste renal da farmácia hospitalar. Fonte: Guia Sanford / Farmácia Clínica."
+  },
+  {
+    "pergunta": "Quais medicamentos prolongam o intervalo QT e requerem monitorização com ECG?",
+    "contexto": "Pergunta frequente de médicos - Segurança medicamentosa",
+    "resposta": "Principais drogas que prolongam QT: Antiarrítmicos: amiodarona, sotalol, procainamida. Antibióticos: azitromicina, claritromicina, fluoroquinolonas (levofloxacino, moxifloxacino). Antifúngicos: fluconazol, voriconazol. Antipsicóticos: haloperidol, quetiapina, ziprasidona. Antieméticos: ondansetrona (doses > 16mg EV), metoclopramida. Antidepressivos: citalopram, escitalopram. Fatores de risco adicionais: hipocalemia, hipomagnesemia, bradicardia, idade > 65 anos, sexo feminino, IC. Conduta: ECG basal antes de iniciar, repetir 48-72h após. QTc > 500ms ou aumento > 60ms: suspender droga. Corrigir eletrólitos. Fonte: CredibleMeds / AHA."
+  },
+  {
+    "pergunta": "Qual a conduta para manejo de hipoglicemia em paciente hospitalizado?",
+    "contexto": "Pergunta frequente de médicos - Emergência metabólica",
+    "resposta": "Hipoglicemia hospitalar (glicemia < 70 mg/dL): Paciente consciente e capaz de deglutir: 15-20g de carboidrato de rápida absorção (3-4 sachês de glicose, 150ml de suco). Reavaliar em 15 minutos. Repetir se < 70. Paciente inconsciente ou sem via oral: Glicose 50% 40ml (4 ampolas de 10ml) EV em bolus. Se sem acesso venoso: Glucagon 1mg IM/SC. Após correção: oferecer refeição ou lanche. Investigar causa: dose excessiva de insulina, omissão de refeição, insuficiência renal ou hepática, interação medicamentosa. Ajustar prescrição de insulina/hipoglicemiantes. Monitorar glicemia capilar a cada 1 hora nas próximas 4 horas. Fonte: SBD / ADA."
+  },
+  {
+    "pergunta": "Como interpretar gasometria arterial de forma rápida?",
+    "contexto": "Pergunta frequente de médicos - Interpretação de exames",
+    "resposta": "Roteiro de interpretação rápida da gasometria arterial: 1) pH: < 7.35 = acidemia; > 7.45 = alcalemia. 2) pCO2 (componente respiratório): normal 35-45 mmHg. pCO2 alta + pH baixo = acidose respiratória. pCO2 baixa + pH alto = alcalose respiratória. 3) HCO3 (componente metabólico): normal 22-26 mEq/L. HCO3 baixo + pH baixo = acidose metabólica. HCO3 alto + pH alto = alcalose metabólica. 4) Compensação: verificar se o distúrbio oposto está se movendo na mesma direção. 5) Ânion gap: Na - (Cl + HCO3). Normal: 8-12. Elevado: cetoacidose, lactato, uremia, intoxicações (MUDPILES). 6) pO2 e SatO2: pO2 < 60 = insuficiência respiratória. Relação PaO2/FiO2 < 300 = lesão pulmonar; < 200 = SDRA. Fonte: Manual de Medicina Intensiva."
+  },
+  {
+    "pergunta": "Quais são os critérios para transfusão de concentrado de hemácias?",
+    "contexto": "Pergunta frequente de médicos - Hemoterapia",
+    "resposta": "Indicações de transfusão de concentrado de hemácias (guidelines restritivos): 1) Hb < 7 g/dL em pacientes clínicos e cirúrgicos estáveis (gatilho restritivo). 2) Hb < 8 g/dL em pacientes com doença cardiovascular estável ou cirurgia ortopédica. 3) Hb < 9-10 g/dL em síndromes coronarianas agudas, sangramento ativo com instabilidade hemodinâmica. 4) Não transfundir com base apenas na Hb - avaliar sinais clínicos: taquicardia, hipotensão, dispneia, lactato elevado. 5) Cada unidade de CH eleva Hb em ~1 g/dL. 6) Solicitar tipagem + prova cruzada. 7) Não aquecer bolsa em banho-maria improvisado. Volume: 1 unidade por vez, reavaliar antes da próxima. Fonte: AABB / Comitê Transfusional."
+  },
+  {
+    "pergunta": "Como manejar náuseas e vômitos pós-operatórios (NVPO)?",
+    "contexto": "Pergunta frequente de médicos - Cuidados pós-operatórios",
+    "resposta": "Manejo de NVPO: 1) Avaliar fatores de risco (escore de Apfel): sexo feminino, não tabagista, história de NVPO/cinetose, uso de opioides pós-operatórios. 2) Profilaxia (conforme risco): Baixo (0-1 fator): sem profilaxia. Moderado (2 fatores): monoterapia - ondansetrona 4mg EV ou dexametasona 4mg EV na indução. Alto (3-4 fatores): terapia combinada - ondansetrona + dexametasona + droperidol 0.625mg EV. 3) Resgate (se NVPO apesar da profilaxia): usar antiemético de classe diferente da profilaxia. Opções: dimenidrinato 50mg EV, metoclopramida 10mg EV, propofol 20mg EV (em SRPA). 4) Medidas não farmacológicas: hidratação adequada, reintrodução alimentar gradual. Fonte: Consenso de NVPO / SAESP."
   }
 ]

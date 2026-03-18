@@ -6,6 +6,11 @@ export interface Paciente {
   sexo: string;
   telefone?: string;
   email?: string;
+  cep?: string;
+  endereco?: string;
+  bairro?: string;
+  cidade?: string;
+  estado?: string;
   criado_em: string;
 }
 
@@ -31,6 +36,8 @@ export interface Triagem {
   frequencia_cardiaca?: number;
   saturacao?: number;
   orientacao_ia?: string;
+  nivel_urgencia?: number;
+  diagnosticos_possiveis?: string;
   validado_por_humano: boolean;
   criado_em: string;
 }
@@ -80,4 +87,46 @@ export interface DadoMedico {
   url: string;
   categoria?: string;
   coletado_em: string;
+}
+
+export interface ModeloFineTuning {
+  id: string;
+  nome: string;
+  parametros: string;
+  descricao: string;
+  ram_estimada: string;
+  vram_treino?: string;
+  dispositivo?: string;
+}
+
+export interface FineTuningJob {
+  id: number;
+  modelo_base: string;
+  status: string;
+  progresso: number;
+  epoca_atual: number;
+  epocas_total: number;
+  loss_atual?: number;
+  learning_rate: number;
+  lora_r: number;
+  lora_alpha: number;
+  batch_size: number;
+  max_length: number;
+  dataset_size: number;
+  erro_msg?: string;
+  caminho_modelo?: string;
+  logs?: string;
+  iniciado_em?: string;
+  concluido_em?: string;
+  criado_em: string;
+}
+
+export interface DatasetEntry {
+  id: number;
+  pergunta: string;
+  contexto?: string;
+  resposta: string;
+  categoria?: string;
+  ativo: boolean;
+  criado_em: string;
 }

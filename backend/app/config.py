@@ -15,16 +15,21 @@ class Settings(BaseSettings):
     db_pass: str = "medassist123"
 
     # LLM
-    llm_provider: str = "openai"  # openai | ollama
+    llm_provider: str = "llama-cpp"  # llama-cpp | openai | ollama
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
-    ollama_url: str = "http://localhost:11434"
-    ollama_model: str = "llama3"
+    ollama_url: str = "http://ollama:11434"
+    ollama_model: str = "qwen3.5:4b"
+    llama_cpp_url: str = "http://llama-server:8080"
+    models_dir: str = "/models"
 
     # TTS/STT
     tts_model: str = "piper"  # piper (local, sem GPU)
     stt_model: str = "vosk"   # vosk (local, sem GPU)
     piper_voice: str = "pt_BR-faber-medium"
+
+    # Web Search (Brave)
+    brave_search_api_key: str = ""
 
     # Scraping
     scraping_interval_hours: int = 24

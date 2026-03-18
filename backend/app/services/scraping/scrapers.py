@@ -17,7 +17,7 @@ class ResultadoScraping:
 class BaseScraper(ABC):
     """Classe base para todos os scrapers."""
     HEADERS = {
-        "User-Agent": "MedAssist-Academic-Bot/1.0 (Projeto Acadêmico FIAP)",
+        "User-Agent": "MedAssist-Academic-Bot/1.0 (Projeto Academico FIAP)",
         "Accept": "text/html,application/json",
     }
 

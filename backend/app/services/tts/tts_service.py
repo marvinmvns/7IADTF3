@@ -1,8 +1,35 @@
 """Serviço TTS - Text-to-Speech com Piper (local, sem GPU)."""
+import re
 import subprocess
 import tempfile
 import os
 from app.config import get_settings
+
+
+def _limpar_markup(texto: str) -> str:
+    """Remove markdown e HTML do texto para que o TTS fale apenas texto puro."""
+    # Remove blocos de código
+    texto = re.sub(r'```[\s\S]*?```', '', texto)
+    texto = re.sub(r'`([^`]+)`', r'\1', texto)
+    # Remove HTML tags
+    texto = re.sub(r'<[^>]+>', '', texto)
+    # Remove headers markdown (## Título -> Título)
+    texto = re.sub(r'^#{1,6}\s+', '', texto, flags=re.MULTILINE)
+    # Remove bold/italic (**texto**, *texto*, __texto__, _texto_)
+    texto = re.sub(r'\*{1,3}([^*]+)\*{1,3}', r'\1', texto)
+    texto = re.sub(r'_{1,3}([^_]+)_{1,3}', r'\1', texto)
+    # Remove links markdown [texto](url) -> texto
+    texto = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', texto)
+    # Remove imagens ![alt](url)
+    texto = re.sub(r'!\[([^\]]*)\]\([^)]+\)', r'\1', texto)
+    # Remove listas markdown (- item, * item, 1. item)
+    texto = re.sub(r'^\s*[-*+]\s+', '', texto, flags=re.MULTILINE)
+    texto = re.sub(r'^\s*\d+\.\s+', '', texto, flags=re.MULTILINE)
+    # Remove linhas horizontais
+    texto = re.sub(r'^[-*_]{3,}\s*$', '', texto, flags=re.MULTILINE)
+    # Remove múltiplas linhas em branco
+    texto = re.sub(r'\n{3,}', '\n\n', texto)
+    return texto.strip()
 
 
 class TTSService:
@@ -11,6 +38,7 @@ class TTSService:
     async def sintetizar(texto: str) -> bytes:
         """Converte texto em áudio WAV usando Piper TTS."""
         settings = get_settings()
+        texto = _limpar_markup(texto)
 
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
             output_path = f.name
@@ -19,7 +47,7 @@ class TTSService:
             # Piper TTS - modelo local, CPU only
             cmd = [
                 "piper",
-                "--model", f"/app/models/tts/{settings.piper_voice}.onnx",
+                "--model", f"/opt/models/tts/{settings.piper_voice}.onnx",
                 "--output_file", output_path,
             ]
             proc = subprocess.Popen(

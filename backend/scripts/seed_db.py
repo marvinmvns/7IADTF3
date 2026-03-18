@@ -48,9 +48,10 @@ async def seed():
             db.add(Triagem(**t))
         await db.commit()
 
-        # Config LLM padrão
+        # Config LLM padrão (Ollama local)
         db.add(ConfigLLM(
-            provider="openai", model_name="gpt-4o-mini",
+            provider="llama-cpp", model_name="qwen3.5",
+            base_url="http://llama-server:8080",
             temperature=0.7, max_tokens=2048,
             tts_engine="piper", stt_engine="vosk", ativo=True,
         ))

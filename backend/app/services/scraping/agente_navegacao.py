@@ -67,8 +67,8 @@ class AgenteNavegacao:
 
                 await browser.close()
 
-        except ImportError:
-            # Fallback sem Playwright: usar httpx
+        except (ImportError, Exception):
+            # Fallback sem Playwright ou se browser falhar: usar httpx
             return await self._fallback_httpx(termo)
 
         return self.paginas_coletadas

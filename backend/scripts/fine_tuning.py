@@ -91,6 +91,19 @@ def executar_fine_tuning(model_name: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0")
 
     # Treinamento
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    # Detecta dispositivo: Intel XPU (via IPEX) > CPU
+    use_cpu = True
+    try:
+        import intel_extension_for_pytorch as ipex
+        import torch
+        if torch.xpu.is_available():
+            use_cpu = False
+            print("Dispositivo: Intel XPU (GPU) detectado via IPEX")
+        else:
+            print("Dispositivo: CPU (Intel XPU não disponível)")
+    except ImportError:
+        print("Dispositivo: CPU (IPEX não instalado)")
+
     args = TrainingArguments(
         output_dir=str(OUTPUT_DIR),
         num_train_epochs=3,
@@ -98,7 +111,8 @@ def executar_fine_tuning(model_name: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0")
         learning_rate=2e-4,
         logging_steps=10,
         save_strategy="epoch",
-        no_cuda=True,  # CPU only
+        no_cuda=True,
+        use_cpu=use_cpu,
     )
 
     trainer = Trainer(model=model, args=args, train_dataset=dataset)

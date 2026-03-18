@@ -1,5 +1,6 @@
 #!/bin/bash
 # MedAssist - Script de Instalação e Setup
+# Uso: ./setup.sh
 set -e
 
 echo "============================================"
@@ -13,18 +14,21 @@ if ! command -v docker &> /dev/null; then
     exit 1
 fi
 
-if ! command -v docker compose &> /dev/null && ! command -v docker-compose &> /dev/null; then
-    echo "[ERRO] Docker Compose não encontrado."
-    exit 1
-fi
-
 # Cria .env se não existir
 if [ ! -f backend/.env ]; then
     cp backend/.env.example backend/.env
-    echo "[INFO] Arquivo .env criado. Configure sua OPENAI_API_KEY."
+    echo "[INFO] Arquivo .env criado."
 fi
 
-# Build e start
+# Baixa modelo GGUF se não existir
+if [ ! -f models/Qwen3.5-4B-Q4_K_M.gguf ]; then
+    echo "[INFO] Baixando modelo Qwen 3.5 4B (~2.6GB)..."
+    mkdir -p models
+    curl -L --progress-bar -o models/Qwen3.5-4B-Q4_K_M.gguf \
+        "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/resolve/main/Qwen3.5-4B-Q4_K_M.gguf"
+    echo "[INFO] Modelo baixado!"
+fi
+
 echo ""
 echo "[1/3] Construindo imagens Docker..."
 docker compose build
@@ -34,23 +38,21 @@ echo "[2/3] Iniciando serviços..."
 docker compose up -d
 
 echo ""
-echo "[3/3] Aguardando banco de dados..."
-sleep 5
-
-# Seed do banco
-echo ""
-echo "[INFO] Populando banco de dados com dados de exemplo..."
-docker compose exec backend python scripts/seed_db.py || echo "[AVISO] Seed pode já ter sido executado."
+echo "[3/3] Aguardando inicialização..."
+echo "       llama-server demora ~3min no primeiro"
+echo "       start (compilação de kernels SYCL)."
+echo "       Starts subsequentes são mais rápidos."
 
 echo ""
 echo "============================================"
-echo "  MedAssist está rodando!"
+echo "  MedAssist iniciando!"
 echo ""
-echo "  Frontend: http://localhost"
-echo "  Backend:  http://localhost:8000"
-echo "  API Docs: http://localhost:8000/docs"
+echo "  Frontend:  http://localhost:8090"
+echo "  Backend:   http://localhost:8001"
+echo "  API Docs:  http://localhost:8001/docs"
+echo "  LLM:       http://localhost:8081 (llama.cpp)"
 echo ""
-echo "  Para usar Ollama (LLM local):"
-echo "  docker compose --profile local-llm up -d"
-echo "  docker compose exec ollama ollama pull llama3"
+echo "  Seed, dataset e RAG carregam automaticamente."
+echo "  Aguarde o llama-server ficar healthy antes"
+echo "  de usar o chat (~3min primeira vez)."
 echo "============================================"

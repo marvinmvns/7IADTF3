@@ -5,4 +5,5 @@ from app.controllers import (
     chat_controller,
     config_controller,
     scraping_controller,
+    auditoria_controller,
 )
